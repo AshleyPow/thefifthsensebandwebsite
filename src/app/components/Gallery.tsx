@@ -11,27 +11,27 @@ export function Gallery() {
   const galleryImages = [
     {
       url: "/gallery_1.jpg",
-      caption: "Concert crowd energy",
+      caption: "Vocal Performance",
     },
     {
       url: "/gallery_2.jpg",
-      caption: "Electric guitar performance",
+      caption: "Bassist",
     },
     {
       url: "/gallery_3.jpg",
-      caption: "Drummer in action",
+      caption: "Guitarist in action",
     },
     {
       url: "/gallery_4.jpg",
-      caption: "Stage lights magic",
+      caption: "TFS Band",
     },
     {
       url: "/gallery_5.jpg",
-      caption: "Vocal performance",
+      caption: "Keyboardist",
     },
     {
       url: "/gallery_6.jpg",
-      caption: "Behind the scenes",
+      caption: "Vocalist",
     },
   ];
 

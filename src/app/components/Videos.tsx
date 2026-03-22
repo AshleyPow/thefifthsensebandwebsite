@@ -38,25 +38,25 @@ const videos = [
     title: "The Fifth Sense - Uptown Funk (Cover)",
     youtube: "https://www.youtube.com/watch?v=tI6tFPHj-R8",
     duration: "00:28",
-    views: "125K",
+    // views: "125K",
   },
   {
     title: "The Fifth Sense - Aunty Ji (Cover)",
     youtube: "https://www.youtube.com/watch?v=_0zSqK2cR5Q",
     duration: "4:12",
-    views: "89K",
+    // views: "89K",
   },
   {
     title: "The Fifth Sense - Aa Zara (Cover)",
     youtube: "https://www.youtube.com/watch?v=t7OcAuuuR58",
     duration: "28:15",
-    views: "56K",
+    // views: "56K",
   },
   {
     title: "The Fifth Sense - Om Shanti Om (Cover)",
     youtube: "https://www.youtube.com/watch?v=OVPEFa3Pjz0",
     duration: "5:03",
-    views: "92K",
+    // views: "92K",
   },
 ].map((v) => {
   const id = getYoutubeVideoId(v.youtube);
@@ -125,7 +125,6 @@ export function Videos() {
               <h3 className="text-xl font-bold mb-2 group-hover:text-[#b5da26] transition-colors">
                 {video.title}
               </h3>
-              <p className="text-gray-400 text-sm">{video.views} views</p>
             </motion.div>
           ))}
         </div>

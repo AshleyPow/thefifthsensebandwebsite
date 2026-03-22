@@ -64,7 +64,7 @@ export function About() {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-[#FF4DA6] mb-2">3+</div>
-                <div className="text-sm text-gray-400 uppercase tracking-wider">Genres</div>
+                <div className="text-sm text-gray-400 uppercase tracking-wider">Languages</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-[#b5da26] mb-2">100%</div>

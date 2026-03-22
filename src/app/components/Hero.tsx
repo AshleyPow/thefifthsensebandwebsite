@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
-import { Play, Music, Calendar } from "lucide-react";
+import { Calendar, Instagram } from "lucide-react";
+
+const INSTAGRAM_URL = "https://www.instagram.com/thefifthsenseband/";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -14,7 +16,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/main_banner_hq.jpeg"
+          src="/main_banner_hq.png"
           alt="The Fifth Sense performing live"
           className="w-full h-full object-cover"
         />
@@ -45,27 +47,7 @@ export function Hero() {
             Premium live music for concerts, festivals, and private events.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            {/* <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("music")}
-              className="bg-[#b5da26] text-[#0A0A0A] px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:shadow-[0_0_30px_rgba(181,218,38,0.5)] transition-shadow"
-            >
-              <Music size={20} />
-              Listen
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("videos")}
-              className="bg-transparent border-2 border-[#FF4DA6] text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-[#FF4DA6]/10 hover:shadow-[0_0_30px_rgba(255,77,166,0.3)] transition-all"
-            >
-              <Play size={20} />
-              Watch
-            </motion.button> */}
-            
+          <div className="flex flex-wrap gap-4 justify-center items-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -75,6 +57,19 @@ export function Hero() {
               <Calendar size={20} />
               Book Us
             </motion.button>
+
+            <motion.a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-transparent border-2 border-[#FF4DA6] text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-[#FF4DA6]/15 hover:shadow-[0_0_30px_rgba(255,77,166,0.35)] transition-all"
+              aria-label="The Fifth Sense on Instagram"
+            >
+              <Instagram size={20} className="text-[#FF4DA6]" aria-hidden />
+              Instagram
+            </motion.a>
           </div>
         </motion.div>
       </div>
