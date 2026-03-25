@@ -1,11 +1,49 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 export function Gallery() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  // Mobile browsers sometimes fail to trigger IntersectionObserver reliably,
+  // which can leave the gallery at `opacity: 0` forever.
+  // Fallback: always show content on small screens.
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 1024px)").matches;
+  });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 1024px)");
+    const handleChange = () => setIsMobile(mq.matches);
+
+    handleChange();
+
+    // Safari fallback for older versions
+    if (typeof mq.addEventListener === "function") {
+      mq.addEventListener("change", handleChange);
+      return () => mq.removeEventListener("change", handleChange);
+    }
+    mq.addListener(handleChange);
+    return () => mq.removeListener(handleChange);
+  }, []);
+
+  const [forceShow, setForceShow] = useState(false);
+
+  useEffect(() => {
+    // Safety net: if IntersectionObserver never flips `isInView` (seen on some mobiles),
+    // don't let the section stay invisible forever.
+    if (typeof window === "undefined") return;
+    if (isInView) return;
+
+    const t = window.setTimeout(() => setForceShow(true), 1500);
+    return () => window.clearTimeout(t);
+  }, [isInView]);
+
+  const showContent = isMobile || isInView || forceShow;
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
@@ -39,8 +77,8 @@ export function Gallery() {
     <section id="gallery" className="py-24 px-6 bg-[#0f0f0f]" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={false}
+          animate={showContent ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -57,9 +95,11 @@ export function Gallery() {
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              initial={false}
+              animate={
+                showContent ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+              }
+              transition={{ duration: 0.4, delay: isMobile ? 0 : index * 0.1 }}
               className="relative group cursor-pointer overflow-hidden rounded-lg aspect-square"
               onClick={() => setSelectedImage(image.url)}
             >
