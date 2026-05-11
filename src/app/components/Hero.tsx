@@ -19,6 +19,8 @@ export function Hero() {
           src="/main_banner_new.png"
           alt="The Fifth Sense performing live"
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-[#0A0A0A]/70 to-[#0A0A0A]" />
       </div>
