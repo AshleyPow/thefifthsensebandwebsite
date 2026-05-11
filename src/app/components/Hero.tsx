@@ -16,7 +16,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/main_banner_hq.png"
+          src="/main_banner_new.png"
           alt="The Fifth Sense performing live"
           className="w-full h-full object-cover"
         />
