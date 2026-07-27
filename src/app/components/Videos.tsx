@@ -35,29 +35,29 @@ const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/channel/UCu8qm1imEgN0WYIfHB
 
 const videos = [
   {
+    title: "The Fifth Sense - Khamoshiya (Cover)",
+    youtube: "https://www.youtube.com/watch?v=cCTtLE_u6cM",
+    duration: "00:42",
+    // views: "56K",
+  },
+  {
     title: "The Fifth Sense - Uptown Funk (Cover)",
     youtube: "https://www.youtube.com/watch?v=tI6tFPHj-R8",
     duration: "00:28",
     // views: "125K",
   },
   {
+    title: "The Fifth Sense - Om Shanti Om (Cover)",
+    youtube: "https://www.youtube.com/watch?v=0O1zhtIXPdo",
+    duration: "1:21",
+    // views: "92K",
+  },
+  {
     title: "The Fifth Sense - Aunty Ji (Cover)",
     youtube: "https://www.youtube.com/watch?v=_0zSqK2cR5Q",
     duration: "4:12",
     // views: "89K",
-  },
-  {
-    title: "The Fifth Sense - Aa Zara (Cover)",
-    youtube: "https://www.youtube.com/watch?v=t7OcAuuuR58",
-    duration: "28:15",
-    // views: "56K",
-  },
-  {
-    title: "The Fifth Sense - Om Shanti Om (Cover)",
-    youtube: "https://www.youtube.com/watch?v=OVPEFa3Pjz0",
-    duration: "5:03",
-    // views: "92K",
-  },
+  }
 ].map((v) => {
   const id = getYoutubeVideoId(v.youtube);
   return { ...v, youtubeId: id, thumbnail: youtubeThumbnailUrl(id) };

@@ -47,14 +47,14 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      quote: "The Fifth Sense performed at our wedding reception, and they were absolutely fantastic. They struck the perfect balance between elegance and energy, keeping the atmosphere lively without ever feeling overwhelming. Their song choices and transitions were seamless, and the entire band was extremely professional to work with. Easily one of the highlights of our evening.",
+      quote: "The Fifth Sense played at our wedding reception, and I must say they were simply amazing. They got just the right amount of balance of elegance and energy, making the event lively yet never too much. Their music selection and transitions were smooth, and their band members were very professional to work with. One of the best parts of our reception night.",
       author: "Dr. Azhar Zojwalla",
       role: "Groom",
       company: "Wedding",
       rating: 5,
     },
     {
-      quote: "The Fifth Sense performed at our wedding reception, and they were absolutely fantastic. They struck the perfect balance between elegance and energy, keeping the atmosphere lively without ever feeling overwhelming. Their song choices and transitions were seamless, and the entire band was extremely professional to work with. Easily one of the highlights of our evening.",
+      quote: "What we needed was a band that could keep everyone dancing and The Fifth Sense did just that. Right from Bollywood numbers to rock, they were able to read the audience really well. Even today our friends talk about their performance because it really turned out to be a complete concert experience.",
       author: "Janavi Zojwalla",
       role: "Bride",
       company: "Wedding",

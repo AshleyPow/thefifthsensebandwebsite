@@ -154,10 +154,10 @@ export function Contact() {
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
                     <a
-                      href="tel:+918369321159"
+                      href="tel:+917208851159"
                       className="text-gray-400 hover:text-[#FF4DA6] transition-colors"
                     >
-                      +91 83693 21159
+                      +91 72088 51159
                     </a>
                   </div>
                 </div>

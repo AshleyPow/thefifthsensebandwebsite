@@ -33,7 +33,7 @@ export function About() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#b5da26] to-[#FF4DA6] rounded-lg opacity-50 group-hover:opacity-75 blur transition duration-500" />
               <img
-                src="/about_us.JPG"
+                src="/about_us.jpg"
                 alt="The Fifth Sense band members"
                 className="relative rounded-lg w-full h-[500px] object-cover"
               />

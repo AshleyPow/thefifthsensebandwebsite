@@ -48,7 +48,7 @@ export function Gallery() {
 
   const galleryImages = [
     {
-      url: "/gallery_1.jpg",
+      url: "/gallery_new_1.jpeg",
       caption: "Vocal Performance",
     },
     {
@@ -68,7 +68,7 @@ export function Gallery() {
       caption: "Keyboardist",
     },
     {
-      url: "/gallery_6.jpg",
+      url: "/gallery_1.jpg",
       caption: "Vocalist",
     },
   ];
